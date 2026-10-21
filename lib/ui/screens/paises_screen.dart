@@ -55,7 +55,33 @@ class PaisCard extends StatelessWidget {
     // y el nombre del país.
     
     return Card(
-      child: Stack()
+      clipBehavior: Clip.antiAliasWithSaveLayer, 
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: Stack(
+        children: [
+          Image.network(
+            imagen,
+            height: 200,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+          Positioned(
+              bottom: 40,
+              left: 40,
+              child: Text(
+                nombre,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
