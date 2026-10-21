@@ -24,6 +24,8 @@ class InfoPaisGeneral extends StatelessWidget {
     // Debéis tener en cuenta no sobrepasar los límites y dibujar fuera del espacio disponible
     // Para comprobar que no os salís, podéis probar a girar el dispositivo (si lo estáis haciendo sobre Android)
 
-    return const Placeholder();
+    return Container (
+      
+    );
   }
 }

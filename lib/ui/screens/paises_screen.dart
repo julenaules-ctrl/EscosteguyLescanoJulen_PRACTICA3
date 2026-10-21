@@ -55,7 +55,9 @@ class PaisCard extends StatelessWidget {
     // y el nombre del país.
     
     return Card(
-      clipBehavior: Clip.antiAliasWithSaveLayer, 
+      
+      // Bordes redondeados de la Card
+      clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
@@ -64,19 +66,17 @@ class PaisCard extends StatelessWidget {
           Image.network(
             imagen,
             height: 200,
+            // Para que sea igual de grande que el contenedo
             width: double.infinity,
-            fit: BoxFit.cover,
+            // Recorta la imagen para que en todos las Cards Ocupen todo ocupen todo
+            fit: BoxFit.cover, 
           ),
           Positioned(
               bottom: 40,
               left: 40,
               child: Text(
                 nombre,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.displayMedium,
                 textAlign: TextAlign.center,
               ),
             ),

@@ -55,7 +55,7 @@ class PaisesRepository {
   // TO-DO:
   // Implementar el método infoPais
   Pais infoPais() {
-    return Pais(nombre: 'Sin implementar');
+    Pais p = Pais.fromJSON(api.infoPais());
+    return p;
   }
-
 }
