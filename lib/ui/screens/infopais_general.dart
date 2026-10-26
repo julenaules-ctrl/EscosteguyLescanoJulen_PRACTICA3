@@ -25,7 +25,31 @@ class InfoPaisGeneral extends StatelessWidget {
     // Para comprobar que no os salís, podéis probar a girar el dispositivo (si lo estáis haciendo sobre Android)
 
     return Container (
-      
+      margin: const EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start, // eje horizontal
+        children: [
+          Image.network(
+            pais.imagen ?? '',
+          ),
+          Text(
+            pais.nombre,
+            style: Theme.of(context).textTheme.titleLarge, 
+            textAlign: TextAlign.left,
+          ),
+          Text(
+            "Capital: ${pais.capital}",
+            style: Theme.of(context).textTheme.labelMedium,
+            textAlign: TextAlign.left,
+          ),
+          Text(
+            pais.descripcion ?? "",
+            style: Theme.of(context).textTheme.bodySmall,
+            textAlign: TextAlign.justify,
+          )
+
+        ],
+      )
     );
   }
 }
