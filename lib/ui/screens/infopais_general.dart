@@ -24,31 +24,51 @@ class InfoPaisGeneral extends StatelessWidget {
     // Debéis tener en cuenta no sobrepasar los límites y dibujar fuera del espacio disponible
     // Para comprobar que no os salís, podéis probar a girar el dispositivo (si lo estáis haciendo sobre Android)
 
-    return Container (
-      margin: const EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // eje horizontal
-        children: [
-          Image.network(
-            pais.imagen ?? '',
-          ),
-          Text(
-            pais.nombre,
-            style: Theme.of(context).textTheme.titleLarge, 
-            textAlign: TextAlign.left,
-          ),
-          Text(
-            "Capital: ${pais.capital}",
-            style: Theme.of(context).textTheme.labelMedium,
-            textAlign: TextAlign.left,
-          ),
-          Text(
-            pais.descripcion ?? "",
-            style: Theme.of(context).textTheme.bodySmall,
-            textAlign: TextAlign.justify,
-          )
-
-        ],
+    return Scaffold(
+        body: SingleChildScrollView(
+          child:
+        Container (
+        margin: const EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0, bottom: 40.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,// eje horizontal
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(.0),
+              child: 
+                Image.network(
+                pais.imagen ?? ''
+              ),
+            ),
+            Row(
+              children:  [
+                Text(
+                  pais.nombre,
+                  style: const TextStyle(fontSize: 25),
+                  textAlign: TextAlign.left,
+                ),
+              ]
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10, bottom: 30),
+              child: 
+              Text(
+                "Capital: ${pais.capital ?? ''}",
+                style: const TextStyle(fontSize: 15),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child:
+                Text(
+                  pais.descripcion ?? "",
+                  style: Theme.of(context).textTheme.bodySmall,
+                  textAlign: TextAlign.justify,
+                ),
+            )
+          ],
+        )
+        )
       )
     );
   }
